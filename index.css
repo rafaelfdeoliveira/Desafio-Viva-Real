@@ -1,0 +1,321 @@
+:root {
+    font-family: 'Open Sans', sans-serif;
+    min-width: 360px;
+}
+
+@media screen and (max-width: 1199px) {
+    :root {
+        font-size: clamp(3.9px, 1.083vw, 13px);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    :root {
+        font-size: 13px;
+    }
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HEADER */
+header {
+    background-color: #0A8ACC;
+    box-sizing: border-box;
+    padding: 0 3%;
+    width: 100%;
+    min-width: 360px;
+    height: 4.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+header a {
+    color: white;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header a:not(#vivaRealLink):hover {
+    background-color: #249AD1;
+}
+
+#vivaRealLogo {
+    height: 63.5%;
+}
+
+/* MAIN */
+main {
+    box-sizing: border-box;
+    padding: 4rem 3%;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+
+/* SEARCH SECTION */
+#searchSection {
+    color: #0000008A;
+    opacity: 0.9;
+    font-weight: 600;
+    width: 22rem;
+}
+
+#searchSection form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#searchSection fieldset {
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+select:invalid {
+    color: gray;
+}
+
+#searchSection input, select {
+    box-sizing: border-box;
+    height: 3.5rem;
+    border-radius: 6px;
+    padding: .5rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: gray;
+    font-size: 1rem;
+}
+
+#searchSection input:focus, select:focus {
+    color: black;
+    outline-color: #4DACD9;
+}
+
+#searchSection fieldset > div {
+    display: flex;
+    align-items: center;
+    gap: 4%;
+}
+
+/* Class used to organize the price and area inputs and labels */
+.jointInputsGroup {
+    position: relative;
+}
+
+.jointInputsGroup label{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Set a line joining the minimum and maxinum price inputs and the minimum and maximum area inputs */
+.jointInputsGroup hr {
+    border: none;
+    border-bottom: 1px solid rgba(126, 123, 123, 0.5);
+    width: 4%;
+    position: absolute;
+    left: 48%;
+    top: 50%;
+}
+
+/* Class to set inputs text justified to the right */
+.justifiedToRight {
+    text-align: end;
+}
+
+/* Organize the buttons (of single choice) for number of rooms, car places and bathrooms */
+.radioButtonsGroup {
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.radioButtonsGroup button {
+    width: 20%;
+    height: 2.5rem;
+    border-radius: 40%;
+    border: 1px solid #D6D6D6;
+    cursor: pointer;
+    font-size: 1rem;
+    color: gray;
+    background-color: white;
+    padding: 1px 0.46rem;
+}
+
+.radioButtonsGroup button:hover {
+    background-color: #EBEBEB;
+}
+
+/* Class used by the javascript to highlight only one button inside each button group at the same time */
+.buttonChecked {
+    background-color: #1190CD !important;
+    color: white !important;
+    border-color: #2097D0 !important;
+}
+
+/* MAIN YELLOW SEARCH AREA */
+#mainSearchField {
+    background-color: #FDD685;
+    border: 2px solid #FDC34A;
+}
+
+#mainSearchField input, select {
+    border: 2px solid #ECC77C;
+}
+
+#virtualTourSwitchDiv {
+    margin-bottom: 1rem;
+}
+
+/* Styling of the virtual tour and videos Switch */
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 4.615rem;
+    height: 2.515rem;
+}
+  
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #E5CF8C;
+    transition: .2s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 2.315rem;
+    width: 2.315rem;
+    left: 0.15rem;
+    bottom: 0.15rem;
+    background-color: white;
+    transition: .2s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(2rem);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 2.615rem;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Class to set the R$ symbol at the left of the inputs that represent money ammount */
+.moneyLabel::before {
+    content: "R$";
+    color: #99A7BA;
+    font-weight: 400;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 3rem;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: text;
+}
+
+/* Adjustment for the R$ symbol position in the max Price Label located more to the right than the min Price Label */
+#maxPriceLabel::before {
+    left: 52%;
+}
+
+/* Adjustment to the max and min Price input padding to avoid covering the R$ symbol with the typed digits */
+.moneyInput {
+    padding-left: 3rem !important;
+    padding-right: 1rem !important;
+}
+
+/* Adapt the color of the border of the 5 buttons to choose the number of rooms to better fit together with the local background color */
+#roomsNumberSelectionGroup button {
+    border-color: #ECC77C;
+}
+
+/* SECONDARY SEARCH AREA */
+#secondarySearchField {
+    border: 2px solid #F5F5F5;
+}
+
+#secondarySearchField input {
+    border: 2px solid #EFEFEF;
+}
+
+/* Class to set the m² symbol at the right of the inputs that represent area */
+.areaLabel::before {
+    content: "m²";
+    color: #99A7BA;
+    font-weight: 400;
+    position: absolute;
+    top: 30%;
+    left: 33%;
+    width: 3rem;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: text;
+}
+
+/* Adjustment for the m² symbol position in the max Area Label located more to the right than the min Area Label */
+#maxAreaLabel::before {
+    left: 85%;
+}
+
+/* Adjustment to the max and min Area input padding to avoid covering the m² symbol with the typed digits */
+.areaInput {
+    padding-left: 1rem !important;
+    padding-right: 2.5rem !important;
+}
+
+/* Minor margin adjustment to fix distance between bathroomsNumber label and the content above it */
+#secondarySearchField label[for=bathroomsNumber] {
+    margin-top: 0.5rem;
+}

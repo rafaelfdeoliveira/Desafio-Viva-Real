@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Comprar Imóveis - Oferta de imóveis à venda - Viva Real</title>
+</head>
+<body>
+    <header>
+        <nav id="mainNavbar">
+            <a id="vivaRealLink" href="" title="Viva Real - Conecta você ao imóvel de seus sonhos"><img id="vivaRealLogo" src="./images/viva-real-logo.png" alt="Viva Real Logo"></a>
+            <a href="">COMPRAR</a>
+            <a href="">ALUGAR</a>
+            <a href="">IMÓVEIS NOVOS</a>
+            <a href="">SELEÇÃO VIVA REAL</a>
+            <a href="">DESCOBRIR</a>
+            <a href="">FINANCIAMENTO</a>
+        </nav>
+        <nav id="logInNavbar">
+            <a href="">ANUNCIAR IMÓVEIS</a>
+            <a href="">ENTRAR</a>
+        </nav>
+    </header>
+    <main>
+        <section id="searchSection">
+            <form>
+                <fieldset id="mainSearchField">
+                    <label for="cityInput">LOCALIZAÇÃO DO IMÓVEL</label>
+                    <input type="text" name="cityInput" id="cityInput" placeholder="Digite uma rua, bairro ou cidade">
+                    <div class="selectedCity"></div>
+                    <label for="virtualTour">IMÓVEL COM</label>
+                    <div id="virtualTourSwitchDiv">
+                        <label class="switch">
+                            <input name="virtualTour" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <label for="virtualTour">Tour Virtual ou Vídeos</label>
+                    </div>
+                    <label for="homeType">TIPO DE IMÓVEL</label>
+                    <select name="homeType" required>
+                        <option value="" disabled selected hidden>Mostrar todos</option>
+                    </select>
+                    <div class="jointInputsGroup">
+                        <label class="moneyLabel">PREÇO MÍNIMO<input class="justifiedToRight moneyInput" type="text" name="minPrice" pattern="[0-9]"></label>
+                        <hr>
+                        <label class="moneyLabel" id="maxPriceLabel">PREÇO MÁXIMO<input class="justifiedToRight moneyInput" type="text" name="maxPrice" pattern="[0-9]" placeholder="ilimitado"></label>
+                    </div>
+                    <label for="roomsNumber">NÚMERO DE QUARTOS</label>
+                    <div class="radioButtonsGroup" id="roomsNumberSelectionGroup">
+                        <button type="button" data-value="1+">1+</button>
+                        <button type="button" data-value="2+">2+</button>
+                        <button type="button" data-value="3+">3+</button>
+                        <button type="button" data-value="4+">4+</button>
+                        <button type="button" data-value="5+">5+</button>
+                    </div>
+                </fieldset>
+                <fieldset id="secondarySearchField">
+                    <div class="jointInputsGroup">
+                        <label class="areaLabel">ÁREA MÍNIMA<input class="justifiedToRight areaInput" type="text" name="minArea"></label>
+                        <hr>
+                        <label class="areaLabel" id="maxAreaLabel">ÁREA MÁXIMA<input class="justifiedToRight areaInput" type="text" name="maxArea" placeholder="ilimitado"></label>
+                    </div>
+                    <label for="carPlacesNumber">NÚMERO DE VAGAS NA GARAGEM</label>
+                    <div class="radioButtonsGroup">
+                        <button type="button" data-value="1+">1+</button>
+                        <button type="button" data-value="2+">2+</button>
+                        <button type="button" data-value="3+">3+</button>
+                        <button type="button" data-value="4+">4+</button>
+                        <button type="button" data-value="5+">5+</button>
+                    </div>
+                    <label for="bathroomsNumber">NÚMERO DE BANHEIROS</label>
+                    <div class="radioButtonsGroup">
+                        <button type="button" data-value="1+">1+</button>
+                        <button type="button" data-value="2+">2+</button>
+                        <button type="button" data-value="3+">3+</button>
+                        <button type="button" data-value="4+">4+</button>
+                        <button type="button" data-value="5+">5+</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+        <section>
+            <nav>
+                <a href="">COMPRAR</a>
+                <a href="">ALUGAR</a>
+                <a href="">IMÓVEIS NOVOS</a>
+                <a href="">SELEÇÃO VIVA REAL</a>
+            </nav>
+            <article></article>
+        </section>
+    </main>
+    <footer>
+        <section>
+            <article>
+                <p>Encontre imóveis</p>
+                <a href="">Comprar</a>
+                <a href="">Alugar</a>
+                <a href="">Imóveis novos</a>
+                <a href="">Descobrir</a>
+                <a href="">Dúvidas sobre como usar o Viva Real</a>
+                <a href="">Mapa do site</a>
+            </article>
+            <article>
+                <p>Institucional</p>
+                <a href="">Sobre nós</a>
+                <a href="">Quer trabalhar conosco?</a>
+            </article>
+            <article>
+                <p>Mais produtos</p>
+                <a href="">Blog</a>
+                <a href="">Viva Corretor</a>
+                <a href="">Simulador Minha Casa Minha Vida</a>
+                <a href="">Simulador de Financiamento de Imóveis</a>
+            </article>
+            <article>
+                <p>Anunciante</p>
+                <a href="">Anunciar imóveis</a>
+                <a href="">Dúvidas frequentes dos Anunciantes</a>
+                <div>
+                    <p>Social</p>
+                    <div>
+                        <a href=""><img src="" alt="Facebook Logo"></a>
+                        <a href=""><img src="" alt="Twitter Logo"></a>
+                        <a href=""><img src="" alt="Youtube Logo"></a>
+                        <a href=""><img src="" alt="Instagram Logo"></a>
+                    </div>
+                </div>
+                <div>
+                    <p>Aplicativos</p>
+                    <div>
+                        <a href=""><img src="" alt="Disponível no Google Play"></a>
+                        <a href=""><img src="" alt="Baixar na App Store"></a>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section>
+            <article>
+                <img src="" alt="Uma empresa OLX Brasil">
+                <p>Copyright ₢ 2021 OLX Brasil. Todos os direitos reservados.</p>
+            </article>
+            <nav>
+                <a href="">TERMOS DE USO</a>
+                <a href="">POLÍTICA DE PRIVACIDADE</a>
+                <a href="">POLÍTICA DE COOKIES</a>
+                <a href="">PORTAL DE PRIVACIDADE</a>
+            </nav>
+        </section>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
