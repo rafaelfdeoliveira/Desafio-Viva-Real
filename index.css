@@ -1,18 +1,7 @@
 :root {
     font-family: 'Open Sans', sans-serif;
     min-width: 360px;
-}
-
-@media screen and (max-width: 1199px) {
-    :root {
-        font-size: clamp(3.9px, 1.083vw, 13px);
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    :root {
-        font-size: 13px;
-    }
+    font-size: clamp(3.9px, 1.083vw, 13px);
 }
 
 body {
@@ -24,7 +13,7 @@ body {
 
 a {
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 /* HEADER */
@@ -69,11 +58,12 @@ main {
     padding: 4rem 3%;
     width: 100%;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 /* SEARCH SECTION */
 #searchSection {
+    flex-shrink: 0;
     color: #0000008A;
     opacity: 0.9;
     font-weight: 600;
@@ -96,6 +86,7 @@ main {
     width: 100%;
 }
 
+/* Set the select "placeholder" text color to gray */
 select:invalid {
     color: gray;
 }
@@ -185,6 +176,11 @@ select:invalid {
 
 #mainSearchField input, select {
     border: 2px solid #ECC77C;
+}
+
+/* Input to receive the city name */
+#cityInput {
+    margin: 0 !important;
 }
 
 #virtualTourSwitchDiv {
@@ -318,4 +314,252 @@ input:checked + .slider:before {
 /* Minor margin adjustment to fix distance between bathroomsNumber label and the content above it */
 #secondarySearchField label[for=bathroomsNumber] {
     margin-top: 0.5rem;
+}
+
+/* MAIN SECTION */
+#mainSection {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#mainSection > nav {
+    display: flex;
+    border-bottom: 2px solid #F5F5F5;
+}
+
+#mainSection > nav a {
+    color: #1190cd;
+    box-sizing: border-box;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+#mainSection > nav a:not(:first-child):hover {
+    background-color: #ECF6FB;
+}
+
+#mainSection > nav a:first-child {
+    border-bottom: .35rem solid #1190CD;
+    cursor: default;
+}
+
+/* CSS FOR ALL DYNAMIC ELEMENTS */
+#resultsSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+h1 {
+    font-size: 1.54rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Organize the Selected City button above the listing of results and in the yellow bar */
+.selectedCityDiv {
+    display: flex;
+}
+
+/* Styling of both City - State Buttons (one in the search Section and the other in the results Section) */
+.selectedCityDiv div {
+    position: relative;
+}
+
+.selectedCityDiv button {
+    border: none;
+    color: #0000008A;
+    background-color: transparent;
+    padding: 0.6rem 1.54rem 0.6rem 0.8rem;
+    margin: 0.31rem 0.15rem;
+    cursor: pointer;
+    border-radius: 1.23rem;
+    font-size: 1rem;
+}
+
+.selectedCityDiv button::after {
+    content: "x";
+    position: absolute;
+    top: 30%;
+    right: 6%;
+    width: 1rem;
+    border-radius: 50%;
+}
+
+/* Styling specific to the City - State Button in the results Section above the listing of the results */
+#resultsSection .selectedCityDiv button {
+    color: #1190CD;
+    border: 1px solid #1190CD;
+}
+
+#resultsSection .selectedCityDiv button:hover {
+    background-color:#ECF6FC ;
+}
+
+#resultsSection .selectedCityDiv button::after {
+    color: #1190CD;
+}
+
+/* Styling specific to the City - State Button in the search Section */
+#searchSection .selectedCityDiv button {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+#searchSection .selectedCityDiv button:hover::after {
+    color: #FDD685;
+    background-color: #988050;
+}
+
+/* Cards with the results */
+#resultsSection > a {
+    cursor: pointer;
+}
+
+#resultsSection > a:hover {
+    box-shadow: 0.2rem 0.2rem 0.5rem 0.1rem rgba(238, 238, 238, 0.7);
+}
+
+/* Home Cards */
+#resultsSection article {
+    display: flex;
+    border: 1px solid #F5F5F5;
+    height: 18rem;
+    border-radius: 4px;
+}
+
+#resultsSection img {
+    width: 40%;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+#resultsSection article > div {
+    flex-grow: 1;
+    padding: 1.2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 400;
+    position: relative;
+}
+
+#resultsSection article > div p {
+    margin: 0;
+}
+
+.cardTopDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cardTopDiv > p:first-child {
+    color: #0000008A;
+}
+
+#resultsSection strong {
+    font-weight: 600;
+}
+
+/* Card name */
+#resultsSection h3 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.54rem;
+}
+
+/* Home spaces in the Cards */
+.homeSpaces {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0.92rem 0;
+}
+
+/* Amenities in the Cards */
+.amenities {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    min-height: 1.554rem;
+}
+
+.amenities div {
+    background-color: #EBEBEB;
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.615rem;
+    display: flex;
+    align-items: center;
+}
+
+.amenities p {
+    color: #A8A8A8;
+    font-weight: 600;
+}
+
+/* Card Bottom div with home pricing and Telephone and Message Bottoms */
+.cardBottomDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Pricing div */
+.cardBottomDiv > div:first-child {
+    display: flex;
+    flex-direction: column;
+    color: #000000DE;
+}
+
+.cardBottomDiv > div:first-child > strong {
+    font-size: 1.54rem;
+}
+
+.cardBottomDiv > div:last-child {
+    display: flex;
+}
+
+/* Telephone and Message Buttons at the bottom right part of each Card */
+.cardBottomDiv button {
+    visibility: hidden;
+    color: #EE6500;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.cardBottomDiv button:hover {
+    color: white;
+    background-color: #EE6500;
+}
+
+/* Make the Telephone and Message Buttons in each Card only visible when the respective Card is hovered over */
+#resultsSection a:hover .cardBottomDiv button {
+    visibility: visible;
+    transition: visibility 1s ease-in;
+}
+
+/* ERROR MESSAGE */
+#errorDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#errorDiv h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+#errorDiv h2 {
+    color: red;
+    font-size: 2.5rem;
+    font-weight: 400;
 }
