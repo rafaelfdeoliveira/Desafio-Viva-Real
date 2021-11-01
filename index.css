@@ -114,7 +114,7 @@ select:invalid {
 }
 
 /* Class used to organize the price and area inputs and labels */
-.jointInputsGroup {
+.jointInputsGroup, .jointInputsGroup div {
     position: relative;
 }
 
@@ -132,6 +132,17 @@ select:invalid {
     position: absolute;
     left: 48%;
     top: 50%;
+}
+
+/* Remove the arrows from the inputs type number */
+input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Make sure the inputs type number arrows are removed in FireFox too */
+input[type='number'] {
+    -moz-appearance:textfield;
 }
 
 /* Class to set inputs text justified to the right */
@@ -249,7 +260,7 @@ input:checked + .slider:before {
     color: #99A7BA;
     font-weight: 400;
     position: absolute;
-    top: 30%;
+    top: 28%;
     left: 0;
     width: 3rem;
     height: 3.5rem;
@@ -258,15 +269,10 @@ input:checked + .slider:before {
     align-items: center;
     cursor: text;
 }
-
-/* Adjustment for the R$ symbol position in the max Price Label located more to the right than the min Price Label */
-#maxPriceLabel::before {
-    left: 52%;
-}
-
+ 
 /* Adjustment to the max and min Price input padding to avoid covering the R$ symbol with the typed digits */
 .moneyInput {
-    padding-left: 3rem !important;
+    padding-left: 2.5rem !important;
     padding-right: 1rem !important;
 }
 
@@ -290,8 +296,8 @@ input:checked + .slider:before {
     color: #99A7BA;
     font-weight: 400;
     position: absolute;
-    top: 30%;
-    left: 33%;
+    top: 28%;
+    right: 0;
     width: 3rem;
     height: 3.5rem;
     display: flex;
@@ -301,9 +307,9 @@ input:checked + .slider:before {
 }
 
 /* Adjustment for the m² symbol position in the max Area Label located more to the right than the min Area Label */
-#maxAreaLabel::before {
+/* #maxAreaLabel::before {
     left: 85%;
-}
+} */
 
 /* Adjustment to the max and min Area input padding to avoid covering the m² symbol with the typed digits */
 .areaInput {
@@ -484,7 +490,6 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     column-gap: 1rem;
-    min-height: 1.554rem;
 }
 
 .amenities div {

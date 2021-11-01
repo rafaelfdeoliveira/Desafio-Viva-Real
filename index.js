@@ -1,11 +1,10 @@
-import { addSearchLogic, addEraseResultsLogic, makeNumericInputsOnlyAcceptDigits, applyRadioButtonsGroupLogic } from "./modules/ListeningEventsFunctions.js"
+import { addSearchLogic, addEraseResultsLogic, addRadioButtonsGroupLogic } from "./modules/ListeningEventsFunctions.js"
 
 // Apply all Page javascript logic
 const applyDynamicLogic = () => {
     addSearchLogic()
     addEraseResultsLogic()
-    makeNumericInputsOnlyAcceptDigits()
-    applyRadioButtonsGroupLogic()
+    addRadioButtonsGroupLogic()
 }
 
 applyDynamicLogic()
