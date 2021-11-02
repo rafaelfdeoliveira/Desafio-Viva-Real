@@ -1,4 +1,4 @@
-import { setMoneyFormat, translateAmenitiesArray } from "./DataHandling.js"
+import { padronizeNumber, getSIfPlural, translateAmenitiesArray, setMoneyFormat } from "./DataHandling.js"
 
 // Create HTML element of elementType with with the given text inside
 const createElementByText = (elementType, text) => {
@@ -57,9 +57,9 @@ const createImageElement = (imageURL, alt) => {
 // Create homeSpacesElement: a div element with nested p elements with the numbers inside strong elements
 const createHomeSpacesElement = ({totalArea, bedrooms, bathrooms, parkingSpaces}) => {
     const totalAreasElement = createElementByHTML('p', `<strong>${totalArea}</strong> m²`)
-    const bedroomsElement = createElementByHTML('p', `<strong>${bedrooms}</strong> Quartos`)
-    const bathroomsElement = createElementByHTML('p', `<strong>${bathrooms}</strong> Banheiros`)
-    const parkingSpacesElement = createElementByHTML('p', `<strong>${parkingSpaces}</strong> Vagas`)
+    const bedroomsElement = createElementByHTML('p', `<strong>${padronizeNumber(bedrooms)}</strong> Quarto${getSIfPlural(bedrooms)}`)
+    const bathroomsElement = createElementByHTML('p', `<strong>${padronizeNumber(bathrooms)}</strong> Banheiro${getSIfPlural(bathrooms)}`)
+    const parkingSpacesElement = createElementByHTML('p', `<strong>${padronizeNumber(parkingSpaces)}</strong> Vaga${getSIfPlural(parkingSpaces)}`)
     const homeSpacesElement = document.createElement('div')
     homeSpacesElement.classList.add('homeSpaces')
     homeSpacesElement.append(totalAreasElement, bedroomsElement, bathroomsElement, parkingSpacesElement)
@@ -104,7 +104,7 @@ const createPricingInfosElement = ({price, monthlyCondoFee, homeType}) => {
     return pricingInfosElement
 }
 
-// Create a div element with two buttons (type button) inside with text TELEFONE and ENVIAR MENSAGEM respectively
+// Create a div element with two buttons (type button) inside with text TELEFONE and ENVIAR MENSAGEM, respectively
 const createContactsElement = () => {
     const phoneButtonElement = createElementByText('button', 'TELEFONE')
     phoneButtonElement.type = 'button'
@@ -117,12 +117,12 @@ const createContactsElement = () => {
 
 // Create the div element (class cardBottomDiv) that contains both pricingInfosElement and contactsElement
 const createCardBottomDivElement = ({price, monthlyCondoFee, homeType}) => {
-            const pricingInfosElement = createPricingInfosElement({price, monthlyCondoFee, homeType})
-            const contactsELement = createContactsElement()
-            const cardBottomDivElement = document.createElement('div')
-            cardBottomDivElement.classList.add('cardBottomDiv')
-            cardBottomDivElement.append(pricingInfosElement, contactsELement)
-            return cardBottomDivElement
+    const pricingInfosElement = createPricingInfosElement({price, monthlyCondoFee, homeType})
+    const contactsELement = createContactsElement()
+    const cardBottomDivElement = document.createElement('div')
+    cardBottomDivElement.classList.add('cardBottomDiv')
+    cardBottomDivElement.append(pricingInfosElement, contactsELement)
+    return cardBottomDivElement
 }
 
 // Create div element with all the information of place presented to the right of the image in the Home Card
@@ -154,8 +154,8 @@ const createHomeCardElement = ({homeName, listing, imageURL}) => {
 }
 
 // Create an anchor tag around the homeCardElement
-export const createHomeAnchorElement = ({homeName, listing, imageURL}) => {
-    const homeCardElement = createHomeCardElement({homeName, listing, imageURL})
+export const createHomeAnchorElement = (homeData) => {
+    const homeCardElement = createHomeCardElement(homeData)
     const homeAnchorElement = document.createElement('a')
     homeAnchorElement.append(homeCardElement)
     return homeAnchorElement

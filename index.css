@@ -14,6 +14,8 @@ body {
 a {
     text-decoration: none;
     font-weight: 600;
+    cursor: pointer;
+    user-select: none;
 }
 
 /* HEADER */
@@ -48,7 +50,7 @@ header a:not(#vivaRealLink):hover {
     background-color: #249AD1;
 }
 
-#vivaRealLogo {
+#vivaRealLink img {
     height: 63.5%;
 }
 
@@ -143,11 +145,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 /* Make sure the inputs type number arrows are removed in FireFox too */
 input[type='number'] {
     -moz-appearance:textfield;
-}
-
-/* Class to set inputs text justified to the right */
-.justifiedToRight {
-    text-align: end;
 }
 
 /* Organize the buttons (of single choice) for number of rooms, car places and bathrooms */
@@ -272,6 +269,7 @@ input:checked + .slider:before {
  
 /* Adjustment to the max and min Price input padding to avoid covering the R$ symbol with the typed digits */
 .moneyInput {
+    text-align: end;
     padding-left: 2.5rem !important;
     padding-right: 1rem !important;
 }
@@ -306,13 +304,9 @@ input:checked + .slider:before {
     cursor: text;
 }
 
-/* Adjustment for the m² symbol position in the max Area Label located more to the right than the min Area Label */
-/* #maxAreaLabel::before {
-    left: 85%;
-} */
-
 /* Adjustment to the max and min Area input padding to avoid covering the m² symbol with the typed digits */
 .areaInput {
+    text-align: end;
     padding-left: 1rem !important;
     padding-right: 2.5rem !important;
 }
@@ -420,16 +414,11 @@ h1 {
     background-color: #988050;
 }
 
-/* Cards with the results */
-#resultsSection > a {
-    cursor: pointer;
-}
-
+/* HOME CARDS with the results */
 #resultsSection > a:hover {
     box-shadow: 0.2rem 0.2rem 0.5rem 0.1rem rgba(238, 238, 238, 0.7);
 }
 
-/* Home Cards */
 #resultsSection article {
     display: flex;
     border: 1px solid #F5F5F5;
@@ -457,6 +446,7 @@ h1 {
     margin: 0;
 }
 
+/* Div that contains the address, hone name, home spaces and amenities */
 .cardTopDiv {
     display: flex;
     flex-direction: column;
@@ -471,21 +461,21 @@ h1 {
     font-weight: 600;
 }
 
-/* Card name */
+/* Home name */
 #resultsSection h3 {
     margin: 0;
     font-weight: 400;
     font-size: 1.54rem;
 }
 
-/* Home spaces in the Cards */
+/* Home spaces */
 .homeSpaces {
     display: flex;
     gap: 0.5rem;
     margin: 0.92rem 0;
 }
 
-/* Amenities in the Cards */
+/* Amenities */
 .amenities {
     display: flex;
     flex-wrap: wrap;
@@ -505,7 +495,7 @@ h1 {
     font-weight: 600;
 }
 
-/* Card Bottom div with home pricing and Telephone and Message Bottoms */
+/* Card Bottom div with home pricing and Telephone and Message Buttons */
 .cardBottomDiv {
     display: flex;
     justify-content: space-between;
