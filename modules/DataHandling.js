@@ -38,7 +38,7 @@ const getCityAndState = (simplifiedInput) => {
 }
 
 // Normalize the input string to the format of only lower case letters with no accents, and the words separated by a dash (eg: sao-paulo)
-const normalizeInput = (input) => input.trim().toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/\p{Diacritic}/gu, '')
+const normalizeInput = (input) => input.trim().toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 
 // Return the money number formated to the Brazilian Currency style with no cents: R$ 000.000 if the money valor exists. If it does not exists, it is set to a dash string
 export const setMoneyFormat = (money) => {
